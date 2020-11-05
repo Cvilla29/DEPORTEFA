@@ -75,7 +75,8 @@ public class MainController {
 		}
 	}
 	
-	public void adir(ActionEvent event) {
+	public void anadir(ActionEvent event) {
 		txtArea.setText("Increible Prueba");
 	}
+	
 }
