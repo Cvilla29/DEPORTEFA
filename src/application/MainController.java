@@ -32,7 +32,7 @@ public class MainController {
 	@FXML
 	private Pane pEquipos;
 	@FXML
-	private Pane pClasificacio;
+	private Pane pClasificacion;
 	
 	public void accederLogin(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
