@@ -68,7 +68,7 @@ public class MainController {
 	}
 	
 	public void clasificacion(ActionEvent ev) {
-		if (pNoticias.isVisible()==true || pEquipos.isVisible()==true) {
+		if (pNoticias.isVisible()==true) {
 			pNoticias.setVisible(false);
 			pEquipos.setVisible(false);
 			pClasificacion.setVisible(true);
