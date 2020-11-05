@@ -5,3 +5,7 @@
 	-fx-font-family: Roboto;
 	-fx-font-size: 18px;
 }
+
+.textArea{
+	-fx-color: #00ff00;
+}
