@@ -41,6 +41,7 @@ public class MainController {
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		primaryStage.setResizable(false);
 	}
 	
 	public void login (ActionEvent event) {
@@ -74,9 +75,6 @@ public class MainController {
 			pClasificacion.setVisible(true);
 		}
 	}
-	
-	public void anadir(ActionEvent event) {
-		txtArea.setText("Increible Prueba");
-	}
+
 	
 }
