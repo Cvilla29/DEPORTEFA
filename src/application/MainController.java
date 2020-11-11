@@ -5,9 +5,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
-
-import com.sun.glass.ui.MenuItem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class MainController {
+public class MainController{
 	
 	@FXML
 	private Label lblStatus;
@@ -28,11 +25,15 @@ public class MainController {
 	@FXML
 	private TextArea txtArea;
 	@FXML
+	private Pane pPrincipal;
+	@FXML
 	private Pane pNoticias;
 	@FXML
 	private Pane pEquipos;
 	@FXML
 	private Pane pClasificacion;
+	
+	
 	
 	public void accederLogin(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
@@ -65,6 +66,7 @@ public class MainController {
 			pNoticias.setVisible(false);
 			pClasificacion.setVisible(false);
 			pEquipos.setVisible(true);
+			
 		}
 	}
 	
@@ -75,6 +77,7 @@ public class MainController {
 			pClasificacion.setVisible(true);
 		}
 	}
+
 
 	
 }
