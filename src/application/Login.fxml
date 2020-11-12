@@ -19,6 +19,6 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="206.0" layoutY="192.0" mnemonicParsing="false" onAction="#login" text="Cancelar" />
+      <Button layoutX="206.0" layoutY="192.0" mnemonicParsing="false" onAction="#cerrarLogin" text="Cancelar" />
    </children>
 </AnchorPane>
