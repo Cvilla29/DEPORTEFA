@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="269.0" prefWidth="370.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="application.MainController">
+<AnchorPane prefHeight="269.0" prefWidth="360.0" style="-fx-background-color: #343333; -fx-border-color: #ff0000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Button layoutX="144.0" layoutY="208.0" mnemonicParsing="false" onAction="#login" text="Acceder" />
+      <Button layoutX="84.0" layoutY="192.0" mnemonicParsing="false" onAction="#login" text="Acceder" />
       <TextField fx:id="txtUser" layoutX="52.0" layoutY="73.0" prefHeight="31.0" prefWidth="257.0" promptText="Nombre de Usuario" />
       <PasswordField fx:id="txtPass" layoutX="52.0" layoutY="130.0" prefHeight="31.0" prefWidth="257.0" promptText="Contraseña" />
-      <Label layoutX="52.0" layoutY="52.0" text="Usuario" />
-      <Label layoutX="52.0" layoutY="109.0" text="Contraseña" />
+      <Label layoutX="52.0" layoutY="52.0" text="Usuario" textFill="WHITE" />
+      <Label layoutX="52.0" layoutY="109.0" text="Contraseña" textFill="WHITE" />
       <Label fx:id="lblStatus" layoutX="50.0" layoutY="14.0" text="Estatus" textFill="RED">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <Button layoutX="206.0" layoutY="192.0" mnemonicParsing="false" onAction="#login" text="Cancelar" />
    </children>
 </AnchorPane>
