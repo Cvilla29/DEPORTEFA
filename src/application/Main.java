@@ -17,7 +17,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,1067,872);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			//primaryStage.initStyle(StageStyle.UTILITY);
-			primaryStage.setTitle("DEPORTEFA");
+			primaryStage.setTitle("DEPORT");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			primaryStage.setResizable(false);
