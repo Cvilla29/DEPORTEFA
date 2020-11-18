@@ -76,8 +76,8 @@ public class Main extends Application {
 			resultSet = sentencia.executeQuery(sentenciaSql);
 			while(resultSet.next()) {
 				MainController controller = new MainController();
-				TextArea Titulo1 = resultSet.getString("TITULO");
-				controller.setNoticia(Titulo1);
+				//TextArea Titulo1 = resultSet.getString("TITULO");
+				//controller.setNoticia(Titulo1);
 				
 				}
 			connection.commit();
