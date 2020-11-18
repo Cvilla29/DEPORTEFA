@@ -32,9 +32,18 @@ public class MainController{
 	private Pane pEquipos;
 	@FXML
 	private Pane pClasificacion;
+	@FXML
+	private TextArea noticia;
 	
-	
-	
+
+	public TextArea getNoticia() {
+		return noticia;
+	}
+
+	public void setNoticia(TextArea noticia) {
+		this.noticia = noticia;
+	}
+
 	public void accederLogin(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
@@ -44,6 +53,17 @@ public class MainController{
 		primaryStage.show();
 		primaryStage.setResizable(false);
 	}
+	
+	public void accederNoticia(ActionEvent event) throws IOException {
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Noticias.fxml"));
+		Scene scene = new Scene(root,370,280);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		primaryStage.setResizable(false);
+	}
+	
 	
 	public void login (ActionEvent event) {
 		if (txtUser.getText().equals("user") && txtPass.getText().equals("pass")) {
@@ -60,6 +80,7 @@ public class MainController{
 			pNoticias.setVisible(true);
 		}
 	}
+	
 	
 	public void equipos(ActionEvent ev) {
 		if (pNoticias.isVisible()==true || pClasificacion.isVisible()==true) {
