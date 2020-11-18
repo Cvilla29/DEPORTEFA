@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -266,7 +267,8 @@
         <menus>
           <Menu mnemonicParsing="false" styleClass="barra" text="Noticias">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#noticias" styleClass="barra" text="Ver noticias" />
+              <MenuItem mnemonicParsing="false" onAction="#noticias" styleClass="barra:hover" text="Ver noticias" />
+                  <MenuItem mnemonicParsing="false" onAction="#accederNoticia" text="Notica Prueba" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" onAction="#equipos" text="Informacion Equipos">
@@ -288,6 +290,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </MenuBar>
    </children>
    <effect>
