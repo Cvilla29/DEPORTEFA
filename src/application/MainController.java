@@ -34,14 +34,14 @@ public class MainController{
 	@FXML
 	private Pane pClasificacion;
 	@FXML
-	private TextArea noticia;
+	private String noticia;
 	
 
-	public TextArea getNoticia() {
+	public String getNoticia() {
 		return noticia;
 	}
 
-	public void setNoticia(TextArea noticia) {
+	public void setNoticia(String noticia) {
 		this.noticia = noticia;
 	}
 
