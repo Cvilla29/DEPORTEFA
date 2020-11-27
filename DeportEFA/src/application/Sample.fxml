@@ -5,20 +5,72 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane fx:id="pPrincipal" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="872.0" prefWidth="1077.0" style="-fx-background-color: #1c1c17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<Pane fx:id="pPrincipal" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="920.0" prefWidth="1399.0" style="-fx-background-color: #1c1c17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Pane fx:id="pClasificacion" layoutX="15.0" layoutY="67.0" prefHeight="627.0" prefWidth="1050.0" visible="false">
+      <Pane fx:id="pVerNoticias" layoutX="7.0" layoutY="73.0" prefHeight="838.0" prefWidth="1383.0" style="-fx-background-color: #2A2A2A;">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="126.0" layoutX="14.0" layoutY="1.0" onMouseClicked="#noticias" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/volver.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="334.0" layoutY="11.0" text="Campazzo apunta a los Denver Nuggets" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="42.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="391.0" fitWidth="704.0" layoutX="14.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/imagen1.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="739.0" layoutY="132.0" prefHeight="2.0" prefWidth="628.0" style="-fx-background-color: orange;" />
+            <Separator layoutX="736.0" layoutY="80.0" orientation="VERTICAL" prefHeight="391.0" prefWidth="3.0" style="-fx-background-color: orange;">
+               <effect>
+                  <Blend />
+               </effect>
+            </Separator>
+            <Label layoutX="916.0" layoutY="87.0" text="Otros temas de interes" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="25.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="14.0" layoutY="485.0" prefHeight="341.0" prefWidth="1357.0" style="-fx-background-color: grey;">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="1342.0" style="-fx-background-color: #3E3E3E;">
+                     <children>
+                        <Label fx:id="lblTexto" layoutX="14.0" layoutY="14.0" prefHeight="449.0" prefWidth="1316.0" text="Label" textAlignment="JUSTIFY" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Label layoutX="78.0" layoutY="22.0" onMouseClicked="#noticias" styleClass="texto" text="Volver" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Malgun Gothic Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pClasificacion" layoutX="15.0" layoutY="67.0" prefHeight="920.0" prefWidth="1399.0" visible="false">
          <children>
             <AnchorPane layoutX="43.0" layoutY="44.0" prefHeight="542.0" prefWidth="531.0">
                <children>
@@ -32,7 +84,7 @@
             </AnchorPane>
          </children>
       </Pane>
-      <Pane fx:id="pEquipos" layoutX="14.0" layoutY="90.0" prefHeight="754.0" prefWidth="1050.0">
+      <Pane fx:id="pEquipos" layoutX="14.0" layoutY="90.0" prefHeight="920.0" prefWidth="1399.0" stylesheets="@application.css" visible="false">
          <children>
             <Label layoutY="-1.0" prefHeight="35.0" prefWidth="240.0" text="Seleccione el equipo " textFill="WHITE">
                <font>
@@ -202,89 +254,132 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="pNoticias" layoutX="14.0" layoutY="80.0" prefHeight="478.0" prefWidth="1050.0" style="-fx-background-color: #2A2A2A;" visible="false">
+      <Pane fx:id="pNoticias" layoutX="7.0" layoutY="64.0" prefHeight="847.0" prefWidth="1383.0" style="-fx-background-color: #2A2A2A;" visible="false">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="23.0" prefHeight="433.0" prefWidth="557.0" styleClass="pane" stylesheets="@application.css">
+            <Pane layoutX="13.0" layoutY="14.0" prefHeight="528.0" prefWidth="1357.0" styleClass="pane" stylesheets="@application.css">
                <children>
-                  <ImageView fitHeight="424.0" fitWidth="564.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true">
+                  <ImageView fitHeight="521.0" fitWidth="1016.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../../img/basket1.jpg" />
+                        <Image url="@../img/imagen1.jpg" />
                      </image>
                   </ImageView>
-                  <TextArea blendMode="LIGHTEN" cache="true" editable="false" layoutX="14.0" layoutY="339.0" prefHeight="80.0" prefWidth="241.0" stylesheets="@application.css" text="MARINKOVIC SERÁ BAJA VARIOS PARTIDOS POR UNA LESIÓN DE HOMBRO" wrapText="true">
+                  <Label layoutX="3.0" layoutY="437.0" onMouseClicked="#verNoticias" prefHeight="77.0" prefWidth="1016.0" style="-fx-background-color: black; -fx-opacity: 0.8;" stylesheets="@application.css" textFill="WHITE">
                      <font>
-                        <Font name="Arial Bold" size="17.0" />
+                        <Font name="Arial Black" size="37.0" />
                      </font>
-                  </TextArea>
-               </children>
-            </AnchorPane>
-            <Pane layoutX="590.0" layoutY="22.0" prefHeight="141.0" prefWidth="442.0" styleClass="pane" stylesheets="@application.css">
-               <children>
-                  <ImageView fitHeight="132.0" fitWidth="193.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../img/basket2.jpg" />
-                     </image>
-                  </ImageView>
-                  <TextArea cache="true" editable="false" layoutX="199.0" layoutY="2.0" prefHeight="136.0" prefWidth="240.0" stylesheets="@application.css" text="MARINKOVIC SERÁ BAJA VARIOS PARTIDOS POR UNA LESIÓN DE HOMBRO" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="437.0" onMouseClicked="#verNoticias" prefHeight="64.0" prefWidth="1003.0" styleClass="texto" text="Campazzo apunta a los Denver Nuggets" textFill="WHITE">
                      <font>
-                        <Font name="Arial Bold" size="20.0" />
+                        <Font name="Malgun Gothic Bold" size="48.0" />
                      </font>
-                  </TextArea>
-               </children>
-            </Pane>
-            <Pane layoutX="590.0" layoutY="169.0" prefHeight="141.0" prefWidth="442.0" styleClass="pane" stylesheets="@application.css">
-               <children>
-                  <ImageView fitHeight="132.0" fitWidth="193.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../img/basket3.jpg" />
-                     </image>
-                  </ImageView>
-                  <TextArea cache="true" editable="false" layoutX="199.0" layoutY="2.0" prefHeight="136.0" prefWidth="240.0" stylesheets="@application.css" text="MARINKOVIC SERÁ BAJA VARIOS PARTIDOS POR UNA LESIÓN DE HOMBRO" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="1019.0" layoutY="4.0" opacity="0.77" prefHeight="521.0" prefWidth="334.0" style="-fx-background-color: #2A2A2A;" />
+                  <Text fill="WHITE" layoutX="1031.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No esperaban este paso dado por el que fuera internacional español y así lo están haciendo saber.&amp;quot;No contestó al teléfono durante todo el verano y ahora...&amp;quot;. Es la frase que más ha salido de la zona noble de Valdebebas en los últimos días cuando se hace referencia al futuro de Isco Alarcón y su súbito cambio de opinión, que pasa por salir del Real Madrid en el próximo mercado de invierno, tal y como adelantó MARCA.La realidad dice que ha sido un gesto que ha pillado con el pie cambiado a los dirigentes de la entidad madridista. Cierto es que en verano contaban con algún movimiento de los jugadores con muchos años en el club (Isco entre ellos), de esos que hacen referencia a su contrato cuando se les comenta algo respecto a su futuro, pero la negativa recibida invitaba a pensar a que nada iba a cambiar y menos viendo el cierto respaldo que reciben de parte de Zinedine Zidane al aparecer en determinadas alineaciones. " wrappingWidth="309.00000059604645">
                      <font>
-                        <Font name="Arial Bold" size="20.0" />
-                     </font>
-                  </TextArea>
+                        <Font name="Malgun Gothic Bold" size="15.0" />
+                     </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="590.0" layoutY="315.0" prefHeight="141.0" prefWidth="442.0" styleClass="pane" stylesheets="@application.css">
+            <Pane layoutX="13.0" layoutY="555.0" prefHeight="278.0" prefWidth="439.0" styleClass="pane" stylesheets="@application.css">
                <children>
-                  <ImageView fitHeight="132.0" fitWidth="193.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true">
+                  <ImageView fitHeight="268.0" fitWidth="432.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../../img/basket4.jpg" />
+                        <Image url="@../img/imagen2.jpg" />
                      </image>
                   </ImageView>
-                  <TextArea cache="true" editable="false" layoutX="199.0" layoutY="2.0" prefHeight="136.0" prefWidth="240.0" stylesheets="@application.css" text="MARINKOVIC SERÁ BAJA VARIOS PARTIDOS POR UNA LESIÓN DE HOMBRO" wrapText="true">
+                  <Label layoutX="6.0" layoutY="200.0" prefHeight="64.0" prefWidth="432.0" style="-fx-background-color: black; -fx-opacity: 0.8;" textFill="WHITE">
                      <font>
-                        <Font name="Arial Bold" size="20.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font>
-                  </TextArea>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="208.0" prefHeight="49.0" prefWidth="414.0" styleClass="texto" text="Minnesota ficha a Mbappe" textFill="WHITE">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="27.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="466.0" layoutY="555.0" prefHeight="278.0" prefWidth="451.0" styleClass="pane" stylesheets="@application.css">
+               <children>
+                  <ImageView fitHeight="268.0" fitWidth="439.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/imagen3.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="6.0" layoutY="200.0" prefHeight="64.0" prefWidth="439.0" style="-fx-background-color: black; -fx-opacity: 0.8;" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="208.0" prefHeight="49.0" prefWidth="421.0" styleClass="texto" text="El nuevo Messi del Barcelona" textFill="WHITE">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="27.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="930.0" layoutY="555.0" prefHeight="278.0" prefWidth="439.0" styleClass="pane" stylesheets="@application.css">
+               <children>
+                  <ImageView fitHeight="268.0" fitWidth="432.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/imagen4.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="5.0" layoutY="200.0" prefHeight="64.0" prefWidth="432.0" style="-fx-background-color: black; -fx-opacity: 0.8;" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="207.0" prefHeight="49.0" prefWidth="414.0" styleClass="texto" text="Se abre el mercado de Fichajes" textFill="WHITE">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="27.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <MenuBar layoutX="14.0" layoutY="18.0" prefHeight="39.0" prefWidth="1050.0" styleClass="barra" stylesheets="@application.css">
-        <menus>
-          <Menu mnemonicParsing="false" styleClass="barra" text="Noticias">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#noticias" styleClass="barra" text="Ver noticias" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" onAction="#equipos" text="Informacion Equipos">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#equipos" styleClass="barra" text="Equipos" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text=" Resultados y Clasificacion">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#clasificacion" styleClass="barra" text="Simulacion" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Acceso">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#accederLogin" styleClass="barra" text="Acceder" />
-              </items>
+      <MenuBar layoutX="7.0" layoutY="14.0" prefHeight="39.0" prefWidth="1383.0" styleClass="barra" stylesheets="@application.css">
+         <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label onMouseClicked="#noticias" text="Noticias" textFill="WHITE" />
+               </graphic>
             </Menu>
-        </menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label onMouseClicked="#equipos" text="Equipos" textFill="WHITE" />
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label onMouseClicked="#clasificacion" text="Resultados" textFill="WHITE">
+                     <tooltip>
+                        <Tooltip text="Empty Tooltip" />
+                     </tooltip></Label>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label onMouseClicked="#accederLogin" text="Acceder" textFill="WHITE" />
+               </graphic>
+            </Menu>
+         </menus>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

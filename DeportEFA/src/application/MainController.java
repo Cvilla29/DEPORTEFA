@@ -1,6 +1,7 @@
 package application;
 
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -13,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 
 public class MainController{
@@ -33,10 +35,15 @@ public class MainController{
 	private Pane pEquipos;
 	@FXML
 	private Pane pClasificacion;
+	@FXML
+	private Pane pVerNoticias;
+	@FXML
+	private Label lblTexto;
+	
+	Main menu = new Main();
 	
 	
-	
-	public void accederLogin(ActionEvent event) throws IOException {
+	public void accederLogin(MouseEvent ev) throws IOException {
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
 		Scene scene = new Scene(root,370,280);
@@ -46,7 +53,7 @@ public class MainController{
 		primaryStage.setResizable(false);
 	}
 	
-	public void login (ActionEvent event) {
+	public void login (MouseEvent ev) {
 		if (txtUser.getText().equals("user") && txtPass.getText().equals("pass")) {
 			lblStatus.setText("Acceso Permitido");
 		} else {
@@ -54,31 +61,45 @@ public class MainController{
 		}
 	}
 	
-	public void cerrarLogin (ActionEvent event) {
-		((Node)event.getSource()).getScene().getWindow().hide();
+	public void cerrarLogin (MouseEvent ev) {
+		((Node)ev.getSource()).getScene().getWindow().hide();
 	}
 	
-	public void noticias(ActionEvent ev) {
-		if (pEquipos.isVisible()==true || pClasificacion.isVisible()==true) {
+	public void noticias(MouseEvent ev) {
+		if (pEquipos.isVisible()==true || pClasificacion.isVisible()==true || pVerNoticias.isVisible()==true) {
 			pEquipos.setVisible(false);
 			pClasificacion.setVisible(false);
+			pVerNoticias.setVisible(false);
 			pNoticias.setVisible(true);
 		}
 	}
 	
-	public void equipos(ActionEvent ev) {
-		if (pNoticias.isVisible()==true || pClasificacion.isVisible()==true) {
+	public void verNoticias(MouseEvent ev) {
+		if (pEquipos.isVisible()==true || pClasificacion.isVisible()==true || pNoticias.isVisible()==true) {
+			pEquipos.setVisible(false);
+			pClasificacion.setVisible(false);
+			pNoticias.setVisible(false);
+			pVerNoticias.setVisible(true);
+			
+			lblTexto.setText(menu.texto);
+		}
+	}
+	
+	public void equipos(MouseEvent ev) {
+		if (pNoticias.isVisible()==true || pClasificacion.isVisible()==true || pVerNoticias.isVisible()==true) {
 			pNoticias.setVisible(false);
 			pClasificacion.setVisible(false);
+			pVerNoticias.setVisible(false);
 			pEquipos.setVisible(true);
 			
 		}
 	}
 	
-	public void clasificacion(ActionEvent ev) {
-		if (pNoticias.isVisible()==true || pEquipos.isVisible()==true) {
+	public void clasificacion(MouseEvent ev) {
+		if (pNoticias.isVisible()==true || pEquipos.isVisible()==true || pVerNoticias.isVisible()==true) {
 			pNoticias.setVisible(false);
 			pEquipos.setVisible(false);
+			pVerNoticias.setVisible(false);
 			pClasificacion.setVisible(true);
 		}
 	}

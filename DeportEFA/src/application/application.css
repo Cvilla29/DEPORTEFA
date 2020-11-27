@@ -6,10 +6,6 @@
 	-fx-font-size: 18px;
 }
 
-.textArea{
-	-fx-color: #00ff00;
-}
-
 .input{
 	-fx-text-fill: white;
 	-fx-background-color:  #2A2A2A;
@@ -18,5 +14,8 @@
 .pane{
 	-fx-border-color: orange;
 	-fx-border-width: 2px;
-	
+}
+
+.texto:hover{
+	-fx-text-fill: orange;
 }
